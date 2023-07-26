@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title></title>
+    <style>
+    body {
+        background-color: #000000;
+    }
+    h1 {
+      font-family: 'Courier New', Courier, monospace;
+      color: red;
+    }
+    .container {
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+
+    }
+    .heart {
+       width: 100px;
+       height: 100px;
+       transform: rotate(45deg);
+       transform-origin: center;
+       position: relative;
+       background: red;
+       margin: 50px auto;
+    }
+    .heart::before, .heart::after{
+       content: '';
+       position: absolute;
+       width: 100px;
+       height: 100px;
+       background: red;
+    }
+    .heart::before{
+       left: -50px;
+    }
+    .heart::after{
+       top: -50px;
+    }
+   	.heart2{
+       width: 100px;
+       height: 100px;
+       transform: rotate(45deg);
+       transform-origin: center;
+       position: relative;
+       background: red;
+       margin: 50px auto;
+    }
+    .heart2::before, .heart2::after{
+       content: '';
+       position: absolute;
+       width: 100px;
+       height: 100px;
+       border-radius: 50%;
+       background: red;
+    }
+    .heart2::before{
+       left: -50px;
+    }
+    .heart2::after{
+       top: -50px;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+      <div id="noth" class="noth" style="width: 200px; height: 200px;"></div>
+       <div id="heart" class="heart" style="display:none;"></div>
+        <img id="heart1" src="./heart1.png" style="display:none;" >
+        <div id="heart2" class="heart2" style="display: none;"></div>
+        <img id="heart3" src="./heart3.jpg" style="display:none;">
+        <h1 id="heart4" class="you" style="display: none;">YOU</h1>
+        <select name="" id="p">
+            <option value="nothing"></option>
+            <option value="144p">144p</option>
+            <option value="360p">360p</option>
+            <option value="480p">480p</option>
+            <option value="720p">720p</option>
+            <option value="1080p">1080p</option>
+       </select>
+       <script>
+            const selectElement = document.getElementById("p");
+            const not = document.getElementById("noth")
+            const p144 = document.getElementById("heart")
+            const p360 = document.getElementById("heart1")
+            const p480 = document.getElementById("heart2")
+            const p720 = document.getElementById("heart3")
+            const p1080 = document.getElementById("heart4")
+            selectElement.addEventListener("change", function() {
+                  const selectedValue = selectElement.value;
+                  if(selectedValue == "nothing") {
+                     not.style = "display:block; width:200px; height:200px;"
+                     p144.style = "display:none; margin-top: 2cm;"
+                     p360.style = "display:none; width: 200px; height: 200px;"
+                     p480.style = "display:none;"
+                     p720.style = "display:none; width: 200px; height: 200px;"
+                     p1080.style = "display: none; height: 200px;margin: 10%;margin-bottom: -5%;font-size: 100px;line-height: 1;letter-spacing: 0em;font-weight: 300; margin-bottom:-50px;"
+                  }else if(selectedValue == "144p") {
+                     p144.style = "display:block; margin-top: 2cm;"
+                     not.style = "display:none;"
+                     p360.style = "display:none; width: 200px; height: 200px;"
+                     p480.style = "display:none;"
+                     p720.style = "display:none; width: 200px; height: 200px;"
+                     p1080.style = "display: none; height: 200px;margin: 10%;margin-bottom: -5%;font-size: 100px;line-height: 1;letter-spacing: 0em;font-weight: 300; margin-bottom:-50px;"
+                  } else if(selectedValue == "360p") {
+                     p360.style = "display:block; width:200px; height:200px;"
+                     not.style = "display:none; width: 200px; height: 200px"
+                     p144.style = "display:none; margin-top: 2cm;"
+                     p480.style = "display:none;"
+                     p720.style = "display:none; width: 200px; height: 200px"
+                     p1080.style = "display: none; height: 200px;margin: 10%;margin-bottom: -5%;font-size: 100px;line-height: 1;letter-spacing: 0em;font-weight: 300; margin-bottom:-50px;"
+                  } else if(selectedValue == "480p") {
+                     p480.style = "display:block;"
+                     not.style = "display:none; width:200px; height: 200px;"
+                     p144.style = "display:none; margin-top: 2cm;"
+                     p360.style = "display:none;width:200px; height: 200px; "
+                     p720.style = "display:none; width:200px; height: 200px;"
+                     p1080.style = "display: none; height: 200px;margin: 10%;margin-bottom: -5%;font-size: 100px;line-height: 1;letter-spacing: 0em;font-weight: 300; margin-bottom:-50px;"
+                  } else if(selectedValue == "720p") {
+                     p720.style = "display:block; width:200px; height:200px;"
+                     not.style = "display:none; width:200px; height: 200px;"
+                     p144.style = "display:none; margin-top: 2cm;"
+                     p360.style = "display:none;width:200px; height: 200px; "
+                     p480.style = "display:none; width:200px; height: 200px;"
+                     p1080.style = "display: none; height: 200px;margin: 10%;margin-bottom: -5%;font-size: 100px;line-height: 1;letter-spacing: 0em;font-weight: 300; margin-bottom:-50px;"
+                  } else if(selectedValue == "1080p") {
+                     not.style = "display:none; width:200px; height:200px;"
+                     p144.style = "display:none; margin-top: 2cm;"
+                     p360.style = "display:none;width:200px; height: 200px; "
+                     p480.style = "display:none; width:200px; height: 200px;"
+                     p720.style = "display:none; width:200px; height:200px;"
+                     p1080.style = "display: block ; height: 200px;margin: 10%;margin-bottom: -5%;font-size: 100px;line-height: 1;letter-spacing: 0em;font-weight: 300; margin-bottom:-50px;"
+                  }
+            });
+       </script>
+    </div>
+</body>
+</html>
